@@ -8,5 +8,5 @@ jobs:
       - name: runing single command on job1
         run: echo "Hi This is my first workflow"
       - name: checking os version of runing host
-        run: echo cat/etc/os-release
+        run:  cat/etc/os-release
         
