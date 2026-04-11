@@ -18,7 +18,7 @@ jobs:
       - name: Runing Multiple Command
         run: |
           echo "Hi From DS"
-          echo "Current date/time is 'date'"
+          echo "Current date/time is `date`"
           sleep 20
      
         
