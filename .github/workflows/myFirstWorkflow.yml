@@ -33,5 +33,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Ruing after Completed all job
-        run: echo "Job 4 completed on `date`
+        run: echo "Job 4 completed on `date`"
         
