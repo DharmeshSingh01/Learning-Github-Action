@@ -9,4 +9,11 @@ jobs:
         run: echo "Hi This is my first workflow"
       - name: checking os version of runing host
         run:  cat /etc/os-release
+  job2:
+    name: Job2
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checking Host Name
+        run: hostname
+     
         
