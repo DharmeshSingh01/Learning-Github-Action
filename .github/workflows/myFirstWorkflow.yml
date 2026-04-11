@@ -15,5 +15,10 @@ jobs:
     steps:
       - name: Checking Host Name
         run: hostname
+      - name: Runing Multiple Command
+        run: |
+          echo "Hi From DS"
+          echo "Current date/time is 'date'"
+          sleep 20
      
         
