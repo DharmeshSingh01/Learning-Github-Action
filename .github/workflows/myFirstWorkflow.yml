@@ -34,4 +34,23 @@ jobs:
     steps:
       - name: Ruing after Completed all job
         run: echo "Job 4 completed on `date`"
+
+  job5:
+    name: Job5
+    needs: job1
+    runs-on: windows-latest
+    steps:
+      - name: Runing on Windows
+        shell: pwsh
+        run: get-computerinfo
+      - name: Get HostName of Windows
+        run: hostname
+  job6:
+    name: job6
+    needs: job2
+    runs-on: macos-latest
+    steps:
+      - name: Runind on Mac
+        run: sw_vers
+        
         
