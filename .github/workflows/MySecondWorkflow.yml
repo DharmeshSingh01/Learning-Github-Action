@@ -69,6 +69,32 @@ jobs:
         run: |
           pwd
           ls -ltr
+  job4:
+    name: job4
+    needs: job1
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create folder for download artifact
+        run: |
+          mkdir -p singlrfileArtifact
+          mkdir -p directoryArtifact
+      - name: Download Sigle Artifact in folder
+        uses: actions/download-artifact@v8
+        with:
+          name: singlefile
+          path: singlrfileArtifact
+      - name: Download Directory in Folder
+        uses: actions/download-artifact@v8
+        with:
+          name: directory_artifact
+          path: directoryArtifact
+      - name: Vrify Download
+        run: |
+         echo "Single File Artifact"
+         ls -ltr singlrfileArtifact
+         echo "Directory Artifact"
+         ls -ltr directoryArtifact
+    
     
         
       
