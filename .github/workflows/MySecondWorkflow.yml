@@ -41,6 +41,7 @@ jobs:
             !**/hostname.txt
   job2:
     name: job2
+    needs: job1
     runs-on: ubuntu-latest
     steps:
       - name: checking current directory
