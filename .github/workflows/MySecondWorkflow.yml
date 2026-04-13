@@ -62,7 +62,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Download directory artifact
-        uses: action/download-artifact@v8
+        uses: actions/download-artifact@v8
         with:
           name: directory_artifact
       - name:  verify directory download
