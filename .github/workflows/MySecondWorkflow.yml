@@ -38,7 +38,7 @@ jobs:
             ./myartifact.txt
             ./test.txt
             artifacts/
-            !==hostname.txt
+            !**/hostname.txt
       
       
 
