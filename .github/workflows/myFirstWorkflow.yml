@@ -22,6 +22,7 @@ jobs:
           echo "Hi From DS"
           echo "Current date/time is `date`"
           sleep 20
+          exit 0
   Job3:
     name: Job3
     runs-on: ubuntu-latest
