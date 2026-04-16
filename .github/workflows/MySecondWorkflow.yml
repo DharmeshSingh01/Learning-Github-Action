@@ -65,6 +65,7 @@ jobs:
         run: |
           pwd
           ls -ltr
+          exit 0
   job3:
     name: job3
     needs: job1
