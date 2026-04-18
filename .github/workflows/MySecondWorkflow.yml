@@ -10,7 +10,7 @@ on:
       
     
 jobs:
-  job1:
+  stjob1:
     name: stjob1
     runs-on: ubuntu-latest
     steps:
@@ -48,9 +48,9 @@ jobs:
             ./test.txt
             artifacts/
             !**/hostname.txt
-  job2:
+  jstob2:
     name: stjob2
-    needs: job1
+    needs: stjob1
     runs-on: ubuntu-latest
     steps:
       - name: checking current directory
@@ -66,7 +66,7 @@ jobs:
           pwd
           ls -ltr
           exit 1
-  job3:
+  stob3:
     name: stjob3
     needs: stjob1
     runs-on: ubuntu-latest
@@ -79,9 +79,9 @@ jobs:
         run: |
           pwd
           ls -ltr
-  job4:
+  stjob4:
     name: stjob4
-    needs: job1
+    needs: stjob1
     runs-on: ubuntu-latest
     steps:
       - name: Create folder for download artifact
