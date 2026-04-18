@@ -1,0 +1,39 @@
+name: my-third-workflow
+on:
+    push:
+        branches:
+            - main
+jobs:
+    checkout-job:
+        name: Checkout Job
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v6.0.2
+            - name: file for artifact
+              run: |
+                echo `pwd`>> myartifact.txt
+                echo "This is test file for artifact" >> myartifact.txt
+                mkdir artifacts
+                echo `ls -ltr` >> artifacts/list.txt
+                echo `hostname` >> artifacts/hostname.txt
+            - name: Upload artifact
+              uses: actions/upload-artifact@v7
+              with:
+                name: my-artifact
+                path: |
+                  ./myartifact.txt
+                  artifacts/
+    download-artifact-job:
+        name: Download Artifact Job
+        needs: checkout-job
+        runs-on: ubuntu-latest
+        steps:
+            - name: Download artifact
+              uses: actions/download-artifact@v8
+              with:
+                name: my-artifact
+            - name: Checking Downloaded artifact
+              run: |
+                pwd
+                ls -ltr
