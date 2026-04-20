@@ -2,8 +2,13 @@ name: my-third-workflow
 on:
     push:
         branches:
-            - main
+            # - main
             - dev
+env:
+    MY_NAME: "Dharmesh"
+    ENV_TYPE: "DEV"
+    APP_PORT: 80
+           
 jobs:
     checkout-job:
         name: Checkout Job
@@ -38,3 +43,11 @@ jobs:
               run: |
                 pwd
                 ls -ltr
+            - name: refrencing Environment variable
+              run: |
+                echo "My Name is $MY_NAME"
+                echo "Environment Type is $ENV_TYPE"
+                echo "Application Port is $APP_PORT"
+            - name: using github secrets
+              run: |
+                echo "My secret name is ${{ secrets.MY_REPO_DEV }}"
