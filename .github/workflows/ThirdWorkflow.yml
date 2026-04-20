@@ -48,3 +48,6 @@ jobs:
                 echo "My Name is $MY_NAME"
                 echo "Environment Type is $ENV_TYPE"
                 echo "Application Port is $APP_PORT"
+            - name: using github secrets
+              run: |
+                echo "My secret name is ${{ secrets.MY_REPO_DEV }}"
