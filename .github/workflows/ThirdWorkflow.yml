@@ -2,7 +2,7 @@ name: my-third-workflow
 on:
     push:
         branches:
-            - main
+            # - main
             - dev
 env:
     MY_NAME: "Dharmesh"
